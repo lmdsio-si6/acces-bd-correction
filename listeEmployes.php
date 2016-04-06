@@ -1,8 +1,7 @@
 <?php
 try {
-    // Connexion à la BD
-    $bdd = new PDO("mysql:host=localhost;dbname=personnel;charset=utf8", "personnel_util", "secret",
-        array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    require 'fonctions.php';
+    $bdd = getBdd();
     // Définition de la requête SQL
     $requete = "SELECT NomEmpl, PrenomEmpl FROM employe ORDER BY Matricule";
     // Exécution de la requête SQL et récupération de ses résultats
